@@ -1,0 +1,615 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+      font-family: "Poppins", sans-serif;
+    }
+
+    label , button{
+      cursor: pointer;
+    }
+
+    .ml_ul {
+      margin-left: 2em;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
+    type="button"
+    class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+    <span class="sr-only">Open sidebar</span>
+    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path clip-rule="evenodd" fill-rule="evenodd"
+        d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+      </path>
+    </svg>
+  </button>
+
+  <aside id="default-sidebar"
+    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+    aria-label="Sidenav">
+    <div
+      class="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+      <ul class="space-y-2">
+        <li>
+          <a href="/"
+            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <svg aria-hidden="true"
+              class="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+              fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+              <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+            </svg>
+            <span class="ml-3">Overview</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/staging-to-live.html"
+            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <svg
+              class="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+              viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M5 4a2 2 0 0 0-2 2v1h10.968l-1.9-2.28A2 2 0 0 0 10.532 4H5ZM3 19V9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm11.707-7.707a1 1 0 0 0-1.414 1.414l.293.293H8a1 1 0 1 0 0 2h5.586l-.293.293a1 1 0 0 0 1.414 1.414l2-2a1 1 0 0 0 0-1.414l-2-2Z"
+                clip-rule="evenodd" />
+            </svg>
+
+            <span class="ml-3">Staging to Live</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/page-speed-optimization.html"
+            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <svg
+              class="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+              viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M5 4a2 2 0 0 0-2 2v1h10.968l-1.9-2.28A2 2 0 0 0 10.532 4H5ZM3 19V9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm11.707-7.707a1 1 0 0 0-1.414 1.414l.293.293H8a1 1 0 1 0 0 2h5.586l-.293.293a1 1 0 0 0 1.414 1.414l2-2a1 1 0 0 0 0-1.414l-2-2Z"
+                clip-rule="evenodd" />
+            </svg>
+
+            <span class="ml-3">Page Speed</span>
+          </a>
+        </li>
+
+
+      </ul>
+
+    </div>
+
+  </aside>
+
+
+  <div class="p-4 sm:ml-64">
+    <div class="sticky top-0 z-10 heading px-4 bg-white rounded-lg dark:border-gray-700 pb-4">
+      <h1 class="text-2xl font-semibold mb-2">Staging to Live Check List</h1>
+      <p class="text-sm text-gray-500 font-medium dark:text-gray-400">Some explanation here</p>
+      <button type="button" class="clear-all absolute right-0 top-5 text-white bg-pink-400 hover:bg-red-100  shadow-xs font-medium rounded-base text-xs px-3 py-1.5 pointer">Clear All</button>
+
+    </div>
+    <div class="p-4 ">
+
+
+      <div class="getting-started  rounded-lg border-2 border-purple-600 p-3">
+        <div class="flex justify-between items-center space-x-8">
+          <h3 class="text-xl font-semibold">Getting Started</h3>
+          <div class="">
+            <span class="text-lg font-semibold progracess-text">0% </span><span class="text-sm text-gray-500">completed
+              <span class="text-green-600 font-semibold compound-text"></span></span>
+          </div>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700 mt-2">
+          <div class="bg-purple-600 h-1.5 rounded-full " id="progracess-bar" style="width: 0%"></div>
+
+        </div>
+
+        <div class="checklist">
+          <ul class="mt-8 space-y-4">
+            <!-- <li class="flex items-center">
+            <input id="checkbox-1" type="checkbox" value=""
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="checkbox-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Item 1</label>
+          </li> -->
+
+            <li>
+              <div class="text-center ">
+                <div class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-lg font-semibold text-pink-800">Setup for Dev site</span>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="flex  justify-between">
+                <div class="flex ">
+                  <input type="checkbox" value=""
+                    class="parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                    <span class="text-blue-600">Step 1</span><br>
+                    <span class="text-lg font-semibold text-gray-700">Global Settings</span>
+                  </label>
+                </div>
+
+              </div>
+
+              <ul class="mt-4 ml_ul">
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Set global color</label>
+                </li>
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Set font family or Import
+                    font</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Set layout size for all
+                    website (Width)</label>
+                </li>
+
+              </ul>
+
+            </li>
+
+            <li>
+              <div class="flex ">
+                <input type="checkbox" value=""
+                  class="parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-blue-600">Step 2</span><br>
+                  <span class="text-lg font-semibold text-gray-700">Assets Adding</span>
+                </label>
+              </div>
+
+              <ul class="mt-4 ml_ul">
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Add Images</label>
+                </li>
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Include Css/Js files into
+                    <span
+                      class="text-pink-800 bg-pink-200 text-xs font-medium px-1.5 py-0.5 rounded">function.php</span></label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Include External Css/Js links
+                    into <span
+                      class="text-pink-800 bg-pink-200 text-xs font-medium px-1.5 py-0.5 rounded">function.php</span> or
+                    <span class="text-pink-800 bg-pink-200 text-xs font-medium px-1.5 py-0.5 rounded">footer.php</span>
+                    or <span
+                      class="text-pink-800 bg-pink-200 text-xs font-medium px-1.5 py-0.5 rounded">header.php</span></label>
+                </li>
+
+              </ul>
+
+            </li>
+
+            <li>
+              <div class="flex ">
+                <input type="checkbox" value=""
+                  class="parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-blue-600">Step 3</span><br>
+                  <span class="text-lg font-semibold text-gray-700">WordPress Settings</span>
+                </label>
+              </div>
+
+              <ul class="mt-4 ml_ul">
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Set correct Site Title and
+                    Tagline</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Ensure WordPress URL and Site
+                    URL use HTTPS</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Set correct Timezone, Date
+                    format, and Language</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Set Homepage and Blog Page
+                    under Reading Settings</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Check Search Engine
+                    Visibility on Staging website</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Permalink
+                    structure as Post Name</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Set proper image sizes in
+                    Media Settings</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Configure Discussion Settings
+                    (enable/disable comments)</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Assign a proper Privacy
+                    Policy page</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Keep auto-updates enabled for
+                    minor security releases</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Enable caching plugin and
+                    optimize images</label>
+                </li>
+
+
+              </ul>
+
+
+            </li>
+
+            <li>
+              <div class="flex ">
+                <input type="checkbox" value=""
+                  class="parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-blue-600">Step 4</span><br>
+                  <span class="text-lg font-semibold text-gray-700">Create Primary Pages</span>
+                </label>
+              </div>
+
+              <ul class="mt-4 ml_ul">
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Header </label>
+                </li>
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Footer
+                  </label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Home</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Privacy Policy</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Term & Condition</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Add Blog in blog post
+                    type</label>
+                </li>
+
+              </ul>
+
+            </li>
+
+            <li>
+              <div class="flex ">
+                <input type="checkbox" value=""
+                  class=" parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-blue-600">Step 5</span><br>
+                  <span class="text-lg font-semibold text-gray-700">Configure Email SMTP</span>
+                </label>
+              </div>
+            </li>
+
+            <li>
+              <div class="flex ">
+                <input type="checkbox" value=""
+                  class="parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-blue-600">Step 6</span><br>
+                  <span class="text-lg font-semibold text-gray-700">Testing on Developer side</span>
+                </label>
+              </div>
+
+              <ul class="mt-4 ml_ul">
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Check layout</label>
+                </li>
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Color scheme</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Proper Font size</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Responsive for all
+                    devices</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Check all links</label>
+                </li>
+
+              </ul>
+
+            </li>
+
+            <li>
+              <div class="flex ">
+                <input type="checkbox" value=""
+                  class="parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-blue-600">Step 7</span><br>
+                  <span class="text-lg font-semibold text-gray-700">Website Going to Tester for testing</span>
+                </label>
+              </div>
+            </li>
+
+            <li>
+              <div class="flex ">
+                <input type="checkbox" value=""
+                  class="parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-blue-600">Step 8</span><br>
+                  <span class="text-lg font-semibold text-gray-700">Fix all bugs</span>
+                </label>
+              </div>
+            </li>
+
+            <li>
+              <div class="flex ">
+                <input type="checkbox" value=""
+                  class="parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-blue-600">Step 9</span><br>
+                  <span class="text-lg font-semibold text-gray-700">Fix all bugs</span>
+                </label>
+              </div>
+            </li>
+
+            <li>
+              <div class="flex ">
+                <input type="checkbox" value=""
+                  class="parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-blue-600">Step 10</span><br>
+                  <span class="text-lg font-semibold text-gray-700">Going for review site</span>
+                </label>
+              </div>
+            </li>
+
+            <li>
+              <div class="border-b-2 my-10 border-dashed border-gray-200"></div>
+            </li>
+            <!-- for live -->
+            <li>
+              <div class="text-center ">
+                <div class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-lg font-semibold text-pink-800">Setup for Live site</span>
+                </div>
+              </div>
+            </li>
+
+
+
+
+            <li>
+              <div class="flex ">
+                <input type="checkbox" value=""
+                  class="parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-blue-600">Step 11</span><br>
+                  <span class="text-lg font-semibold text-gray-700">Migration website (Manual Way)</span>
+                </label>
+              </div>
+
+              <ul class="mt-4 ml_ul">
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Zip Wordpress from staging
+                    (whitch have wordpress all files and filders wp-admin,wp-content and other files)</label>
+                </li>
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Exports DataBase form Stagin
+                    site</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Import and extract zip file
+                    in domain root folder
+                    <span class="text-pink-800 bg-pink-200 text-xs font-medium px-1.5 py-0.5 rounded">public_html/
+                    </span> or
+                    <span class="text-pink-800 bg-pink-200 text-xs font-medium px-1.5 py-0.5 rounded">domainname.com/
+                    </span>
+                  </label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Change in DataBase
+                    <span class="text-pink-800 bg-pink-200 text-xs font-medium px-1.5 py-0.5 rounded">WP_OPTION
+                    </span> set <strong>site_url</strong> and <strong>home_url</strong> to live site URL
+                  </label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Changes in config file
+                    <span class="text-pink-800 bg-pink-200 text-xs font-medium px-1.5 py-0.5 rounded">wp-config.php
+                    </span> set <strong>database name</strong>, <strong>username</strong> and <strong>password</strong>
+                  </label>
+                </li>
+
+              </ul>
+
+            </li>
+
+            <li>
+              <div class="flex ">
+                <input type="checkbox" value=""
+                  class="parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-blue-600">Step 12</span><br>
+                  <span class="text-lg font-semibold text-gray-700">Set website to no index <span
+                      class="text-pink-800 bg-pink-200 text-xs font-medium px-1.5 py-0.5 rounded">setting -> general ->
+                      search engine visibility
+                    </span>
+
+                  </span>
+                </label>
+              </div>
+            </li>
+
+            <li>
+              <div class="flex ">
+                <input type="checkbox" value=""
+                  class="parent-checkbox w-5 h-5 text-blue-600 mt-1 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <span class="text-blue-600">Step 13</span><br>
+                  <span class="text-lg font-semibold text-gray-700">Tesing Live Website</span>
+                </label>
+              </div>
+
+              <ul class="mt-4 ml_ul">
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Check images url</label>
+                </li>
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">Check all links</label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">
+                    Check proper functioning of forms
+                  </label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">
+                    Check website speed
+                  </label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">
+                    Check responsive for all devices
+                  </label>
+                </li>
+
+                <li class="flex items-center mb-3">
+                  <input type="checkbox" value=""
+                    class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label class="ml-2 text-md font-medium text-gray-800 dark:text-gray-300">
+                    Check cross browser compatibility
+                  </label>
+                </li>
+
+
+              </ul>
+
+            </li>
+
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./js/main.js"> </script>
+</body>
+
+</html>
