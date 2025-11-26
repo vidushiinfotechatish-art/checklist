@@ -1,16 +1,21 @@
 $(document).ready(function () {
     $('.clear-all').on('click', function () {
-        $('input[type="checkbox"]').prop('checked', false);
-        $('label').each(function () {
-            this.style.textDecoration = "unset";
-            this.style.color = "#1e2939";
-        });
-        $('li').each(function () {
-            localStorage.setItem($(this).find('> .flex input[type="checkbox"]').attr('id'), false);
-            $(this).find('ul input[type="checkbox"]').each(function () {
-                localStorage.setItem($(this).attr('id'), false);
+
+        if (confirm("Delete all records Are you sure?")) {
+            $('input[type="checkbox"]').prop('checked', false);
+            $('label').each(function () {
+                this.style.textDecoration = "unset";
+                this.style.color = "#1e2939";
             });
-        });
+            $('li').each(function () {
+                localStorage.setItem($(this).find('> .flex input[type="checkbox"]').attr('id'), false);
+                $(this).find('ul input[type="checkbox"]').each(function () {
+                    localStorage.setItem($(this).attr('id'), false);
+                });
+            });
+           window.location.reload();
+        }
+
     });
     let prograssBar = $('#progracess-bar');
 
