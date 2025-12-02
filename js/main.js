@@ -1,22 +1,32 @@
 $(document).ready(function () {
+
+    // Unique key for this page
+    const PAGE_KEY = 'page_' + window.location.pathname.replace(/\W+/g, '_') + '_';
+
     $('.clear-all').on('click', function () {
 
         if (confirm("Delete all records Are you sure?")) {
+
             $('input[type="checkbox"]').prop('checked', false);
+
             $('label').each(function () {
                 this.style.textDecoration = "unset";
                 this.style.color = "#1e2939";
             });
+
             $('li').each(function () {
-                localStorage.setItem($(this).find('> .flex input[type="checkbox"]').attr('id'), false);
+                localStorage.setItem(PAGE_KEY + $(this).find('> .flex input[type="checkbox"]').attr('id'), false);
+
                 $(this).find('ul input[type="checkbox"]').each(function () {
-                    localStorage.setItem($(this).attr('id'), false);
+                    localStorage.setItem(PAGE_KEY + $(this).attr('id'), false);
                 });
             });
-           window.location.reload();
+
+            window.location.reload();
         }
 
     });
+
     let prograssBar = $('#progracess-bar');
 
     // STEP 1: Assign unique IDs if missing
@@ -29,7 +39,7 @@ $(document).ready(function () {
     // STEP 2: Restore saved checkbox states
     $('input[type="checkbox"]').each(function () {
         let id = $(this).attr('id');
-        let saved = localStorage.getItem(id);
+        let saved = localStorage.getItem(PAGE_KEY + id);
 
         if (saved === "true") {
             $(this).prop('checked', true);
@@ -49,8 +59,6 @@ $(document).ready(function () {
 
     initializeProgress();
 
-
-
     // Clicking label toggles checkbox
     $('label').on('click', function () {
         let checkbox = $(this).prev();
@@ -60,49 +68,41 @@ $(document).ready(function () {
             checkbox.prop('checked', false);
             this.style.textDecoration = "unset";
             this.style.color = "#1e2939";
-            localStorage.setItem(id, false);
+            localStorage.setItem(PAGE_KEY + id, false);
         } else {
             checkbox.prop('checked', true);
             this.style.textDecoration = "line-through";
             this.style.color = "#798ba4ff";
-            localStorage.setItem(id, true);
+            localStorage.setItem(PAGE_KEY + id, true);
         }
 
         updateParent($(this).closest('li'));
         updateChildren($(this).closest('li'));
-
         saveChildrenState($(this).closest('li'));
+
         initializeProgress();
     });
 
-
-
-    // When checkbox directly changes
+    // Checkbox change event
     $('input[type="checkbox"]').on('change', function () {
         let li = $(this).closest('li');
         let id = $(this).attr('id');
-        localStorage.setItem(id, $(this).prop('checked'));
+        localStorage.setItem(PAGE_KEY + id, $(this).prop('checked'));
 
         updateParent(li);
         updateChildren(li);
-
         saveChildrenState(li);
+
         initializeProgress();
     });
 
-
-
-    // Save children when parent toggles
     function saveChildrenState(li) {
         li.find('ul input[type="checkbox"]').each(function () {
             let id = $(this).attr('id');
-            localStorage.setItem(id, $(this).prop('checked'));
+            localStorage.setItem(PAGE_KEY + id, $(this).prop('checked'));
         });
     }
 
-
-
-    // Parent update logic
     function updateParent(li) {
         var parentLi = li.parent().closest('li');
         if (parentLi.length === 0) return;
@@ -113,13 +113,10 @@ $(document).ready(function () {
 
         if (allChildren.length > 0) {
             parentCheckbox.prop('checked', allChildren.length === checkedChildren.length);
-            localStorage.setItem(parentCheckbox.attr('id'), parentCheckbox.prop('checked'));
+            localStorage.setItem(PAGE_KEY + parentCheckbox.attr('id'), parentCheckbox.prop('checked'));
         }
     }
 
-
-
-    // Children update logic
     function updateChildren(li) {
         var parentCB = li.find('> .flex input[type="checkbox"]');
 
@@ -133,7 +130,7 @@ $(document).ready(function () {
                 lbl.style.textDecoration = "line-through";
                 lbl.style.color = "#798ba4ff";
 
-                localStorage.setItem($(this).attr('id'), true);
+                localStorage.setItem(PAGE_KEY + $(this).attr('id'), true);
             });
         } else if (children.length > 0 && !parentCB.prop('checked')) {
             children.prop('checked', false).each(function () {
@@ -141,25 +138,23 @@ $(document).ready(function () {
                 lbl.style.textDecoration = "unset";
                 lbl.style.color = "#1e2939";
 
-                localStorage.setItem($(this).attr('id'), false);
+                localStorage.setItem(PAGE_KEY + $(this).attr('id'), false);
             });
         }
     }
 
-
-
-    // Progress bar logic
     function initializeProgress() {
         let pare = $('.parent-checkbox');
         let totalParent = pare.length;
         let checkedParent = $('.parent-checkbox:checked').length;
+
         let progressPercent = Math.round((checkedParent / totalParent) * 100);
 
         $('.compound-text').text('(' + checkedParent + '/' + totalParent + ')');
         $('.progracess-text').text(progressPercent + '% ');
         prograssBar.css('width', progressPercent + '%');
 
-        localStorage.setItem('progressValue', progressPercent);
+        localStorage.setItem(PAGE_KEY + 'progressValue', progressPercent);
     }
 
 });
